@@ -45,6 +45,10 @@ h6 {
   isolation: isolate;
 }
 
+h1 {
+  text-align: center;
+}
+
 /* classes kısmı start  */
 
 .classContainer {
@@ -126,7 +130,6 @@ h6 {
 }
 
 /* classes kısmı end  */
-
 
 /* detail kısmı start  */
 
