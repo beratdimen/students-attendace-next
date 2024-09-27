@@ -47,7 +47,66 @@ h6 {
 
 h1 {
   text-align: center;
+  margin-top: 100px;
 }
+
+.returnPage {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  width: fit-content;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.returnPage:hover {
+  background-color: green;
+  color: white;
+}
+
+/* header start  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  padding: 16px;
+  top: 0;
+  z-index: 999;
+  background-color: #fff !important;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+  }
+
+  .signBtns {
+    display: flex;
+    gap: 8px;
+    button {
+      letter-spacing: 2px;
+      background-color: #1292ee;
+      border: 0px;
+      padding: 12px;
+      border-radius: 8px;
+      color: white;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  }
+}
+/* header end  */
 
 /* classes kısmı start  */
 
@@ -137,10 +196,32 @@ h1 {
   display: grid;
   justify-content: center;
 
+  .detailHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 40px;
+
+    form {
+      display: flex;
+      align-items: center;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+      input {
+        border: none;
+        padding: 8px 16px;
+      }
+      button {
+        padding: 4px 8px;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
   .returnPage {
-    background-color: antiquewhite;
     padding: 8px;
     width: fit-content;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   a {
@@ -214,6 +295,23 @@ h1 {
         animation: blinkColor 1s infinite;
       }
     }
+  }
+
+  .attencedBtn {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-block: 60px;
+    padding: 6px 8px;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  .attencedBtn:hover {
+    background-color: green;
+    color: white;
   }
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { data } from "@/data";
+import { Search } from "@/helpers/icons";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -9,9 +10,9 @@ export default function ClassDetail() {
   const { id } = useParams();
   const [checked, setChecked] = useState([]);
   const [attendance, setAttendance] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const classes = data.find((x) => x.id == id);
-  console.log("--------" + classes);
   const [students, setStudents] = useState(
     classes.students.map((student) => {
       return {
@@ -35,15 +36,34 @@ export default function ClassDetail() {
     setStudents(updatedStudents);
   };
   console.log(checked);
+
+  const filteredStudents = students.filter((student) =>
+    `${student.name} ${student.surname}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
   return (
     <div className="classDetailContainer">
       <h1>Class - {classes.name}</h1>
-      <Link className="returnPage" href={"./"}>
-        Önceki Sayfa
-      </Link>
+      <div className="detailHeader">
+        <Link className="returnPage" href={"./"}>
+          Önceki Sayfa
+        </Link>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Search by name "
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button>
+            <Search />
+          </button>
+        </form>
+      </div>
 
       <div className="detailBox">
-        {students.map((student) => (
+        {filteredStudents.map((student) => (
           <div>
             {student.gender === "Male" ? (
               <img src="../img/avatar-male.svg" alt="Male Avatar" />
@@ -97,6 +117,7 @@ export default function ClassDetail() {
       </div>
       {attendance === true ? (
         <button
+          className="attencedBtn"
           onClick={() => {
             setAttendance(false);
             setStudents(
@@ -109,10 +130,11 @@ export default function ClassDetail() {
             );
           }}
         >
-          Sıfırla
+          Reset
         </button>
       ) : (
         <button
+          className="attencedBtn"
           onClick={() => {
             setAttendance(true);
             setStudents(
@@ -128,7 +150,7 @@ export default function ClassDetail() {
             );
           }}
         >
-          Yoklama Tamamla
+          Complete the roll call
         </button>
       )}
     </div>

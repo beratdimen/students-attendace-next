@@ -1,19 +1,14 @@
 "use client";
 import { data } from "@/data";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function Classes() {
-  const router = useRouter();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    router.push("/");
-  };
   return (
     <div>
       <h1>Acunmedya Akademi'ye Hoş Geldiniz</h1>
-
+      <Link className="returnPage" href={"./"}>
+        Önceki Sayfa
+      </Link>
       <div className="classContainer">
         {data.map((x) => (
           <Link className="link" href={`/class/${x.id}`}>
@@ -42,7 +37,6 @@ export default function Classes() {
           </Link>
         ))}
       </div>
-      <button onClick={handleSubmit}>Geri Dön</button>
     </div>
   );
 }
