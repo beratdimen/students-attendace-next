@@ -8,7 +8,7 @@ export default function Classes() {
       <h1>Welcome to Acunmedya Academy</h1>
       <div className="classContainer">
         {data.map((x) => (
-          <Link className="link" href={`/class/${x.id}`}>
+          <Link className="link" href={`/class/${x.id}`} key={x.id}>
             <div className="imageClassBox">
               <img src={x.img} alt="" />
             </div>
