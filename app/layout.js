@@ -29,7 +29,10 @@ export default function RootLayout({ children }) {
               <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={"/class"}>Class</Link>
+              <Link href={""}>About</Link>
+            </li>
+            <li>
+              <Link href={""}>Contact</Link>
             </li>
           </ul>
           <div className="signBtns">

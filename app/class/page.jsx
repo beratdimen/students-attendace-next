@@ -5,10 +5,7 @@ import Link from "next/link";
 export default function Classes() {
   return (
     <div>
-      <h1>Acunmedya Akademi'ye Hoş Geldiniz</h1>
-      <Link className="returnPage" href={"./"}>
-        Önceki Sayfa
-      </Link>
+      <h1>Welcome to Acunmedya Academy</h1>
       <div className="classContainer">
         {data.map((x) => (
           <Link className="link" href={`/class/${x.id}`}>

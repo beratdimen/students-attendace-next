@@ -1,7 +1,7 @@
 export const data = [
   {
     id: 1,
-    name: "Frontend Uzmanlık Sınıfı",
+    name: "Frontend Master Class",
     teacher: "Furkan Özay",
     period: "9",
     location: "Class 147",
@@ -143,7 +143,7 @@ export const data = [
   },
   {
     id: 2,
-    name: "Backend Uzmanlık Sınıfı",
+    name: "Backend Master Class",
     teacher: "Orhan Ekici",
     period: "9",
     location: "Class 148",
@@ -285,7 +285,7 @@ export const data = [
   },
   {
     id: 3,
-    name: "Frontend Temel Sınıfı",
+    name: "Frontend Base Class",
     teacher: "Nihat Duysak",
     period: "9",
     location: "Class 149",
@@ -439,7 +439,7 @@ export const data = [
   },
   {
     id: 4,
-    name: "Backend Temel Sınıfı",
+    name: "Backend Base Class",
     teacher: "Barış Kahraman",
     period: "9",
     location: "Class 150",
