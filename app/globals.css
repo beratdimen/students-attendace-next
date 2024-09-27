@@ -126,3 +126,121 @@ h6 {
 }
 
 /* classes kısmı end  */
+
+
+/* detail kısmı start  */
+
+.classDetailContainer {
+  display: grid;
+  justify-content: center;
+
+  .detailBody {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    gap: 16px;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .sideNav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 8px 24px;
+    margin-top: 48px;
+    height: 100%;
+  }
+
+  .returnPage {
+    background-color: antiquewhite;
+    padding: 8px;
+    width: fit-content;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .detailBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 48px;
+
+    img {
+      position: relative;
+      left: 105px;
+      top: 20px;
+      background-color: rgb(233, 233, 233);
+      border-radius: 50%;
+    }
+
+    a {
+      color: black;
+    }
+
+    .detail {
+      display: grid;
+      gap: 16px;
+      text-align: center;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 32px 16px 16px 16px;
+      height: 100%;
+
+      .detailContent {
+        .here {
+          background-color: blue;
+          color: white;
+          padding: 4px 8px;
+        }
+        .absend {
+          background-color: red;
+          color: white;
+          padding: 4px 8px;
+        }
+        h5 {
+          font-size: 16px;
+        }
+
+        p {
+          opacity: 0.6;
+        }
+      }
+
+      .detailFooter {
+        display: flex;
+        gap: 24px;
+      }
+
+      .low {
+        color: green;
+        font-weight: 500;
+      }
+
+      .high {
+        color: red;
+        font-weight: bold;
+      }
+
+      .medium {
+        font-weight: 500;
+        color: rgb(177, 16, 16);
+        animation: blinkColor 1s infinite;
+      }
+    }
+  }
+}
+
+@keyframes blinkColor {
+  0% {
+    color: rgb(177, 16, 16);
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: rgb(177, 16, 16);
+  }
+}
+/* detail kısmı end  */
