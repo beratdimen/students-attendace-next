@@ -93,6 +93,7 @@ header {
   .signBtns {
     display: flex;
     gap: 8px;
+
     button {
       letter-spacing: 2px;
       background-color: #1292ee;
@@ -215,6 +216,7 @@ header {
         padding: 4px 8px;
         background-color: transparent;
         border: none;
+        cursor: pointer;
       }
     }
   }
