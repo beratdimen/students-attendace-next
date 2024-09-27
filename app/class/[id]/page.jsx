@@ -64,7 +64,7 @@ export default function ClassDetail() {
 
       <div className="detailBox">
         {filteredStudents.map((student) => (
-          <div>
+          <div key={student.id}>
             {student.gender === "Male" ? (
               <img src="../img/avatar-male.svg" alt="Male Avatar" />
             ) : (
