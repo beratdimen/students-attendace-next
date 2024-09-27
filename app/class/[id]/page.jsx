@@ -42,102 +42,95 @@ export default function ClassDetail() {
         Önceki Sayfa
       </Link>
 
-      <div className="detailBody">
-        <div className="sideNav">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/class"}>Class</Link>
-        </div>
-
-        <div className="detailBox">
-          {students.map((student) => (
-            <div>
-              {student.gender === "Male" ? (
-                <img src="../img/avatar-male.svg" alt="Male Avatar" />
-              ) : (
-                <img src="../img/avatar-female.svg" alt="Female Avatar" />
-              )}
-              <div className="detail" key={student.id}>
-                <Link
-                  className="detailLink"
-                  href={`/class/${classes.id}/student/${student.id}`}
-                >
-                  <div className="detailContent">
-                    {attendance && (
-                      <span
-                        className={
-                          student.isAttended === true ? "here" : "absend"
-                        }
-                      >
-                        {student.isAttended === true ? "Here" : "Absend"}
-                      </span>
-                    )}
-                    <h5>
-                      {student.name} {student.surname}
-                    </h5>
-                    <p>{student.email}</p>
-                  </div>
-                  <div className="detailFooter">
-                    <p>{student.schoolNo}</p>
-                    <p
-                      className={`${
-                        student.attendance >= 8
-                          ? "high"
-                          : student.attendance >= 5
-                          ? "medium"
-                          : "low"
-                      }`}
+      <div className="detailBox">
+        {students.map((student) => (
+          <div>
+            {student.gender === "Male" ? (
+              <img src="../img/avatar-male.svg" alt="Male Avatar" />
+            ) : (
+              <img src="../img/avatar-female.svg" alt="Female Avatar" />
+            )}
+            <div className="detail" key={student.id}>
+              <Link
+                className="detailLink"
+                href={`/class/${classes.id}/student/${student.id}`}
+              >
+                <div className="detailContent">
+                  {attendance && (
+                    <span
+                      className={
+                        student.isAttended === true ? "here" : "absend"
+                      }
                     >
-                      Discontinuity: {student.attendance}
-                    </p>
-                  </div>
-                </Link>
-                {!attendance && (
-                  <input
-                    type="checkbox"
-                    onClick={() => handleClick(student.id)}
-                  />
-                )}
-              </div>
+                      {student.isAttended === true ? "Here" : "Absend"}
+                    </span>
+                  )}
+                  <h5>
+                    {student.name} {student.surname}
+                  </h5>
+                  <p>{student.email}</p>
+                </div>
+                <div className="detailFooter">
+                  <p>{student.schoolNo}</p>
+                  <p
+                    className={`${
+                      student.attendance >= 8
+                        ? "high"
+                        : student.attendance >= 5
+                        ? "medium"
+                        : "low"
+                    }`}
+                  >
+                    Discontinuity: {student.attendance}
+                  </p>
+                </div>
+              </Link>
+              {!attendance && (
+                <input
+                  type="checkbox"
+                  onClick={() => handleClick(student.id)}
+                />
+              )}
             </div>
-          ))}
-          {attendance === true ? (
-            <button
-              onClick={() => {
-                setAttendance(false);
-                setStudents(
-                  classes.students.map((student) => {
-                    return {
-                      ...student,
-                      isAttended: false,
-                    };
-                  })
-                );
-              }}
-            >
-              Sıfırla
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                setAttendance(true);
-                setStudents(
-                  students.map((student) => {
-                    return {
-                      ...student,
-                      attendance:
-                        student.isAttended === true
-                          ? student.attendance
-                          : student.attendance + 1,
-                    };
-                  })
-                );
-              }}
-            >
-              Yoklama Tamamla
-            </button>
-          )}
-        </div>
+          </div>
+        ))}
       </div>
+      {attendance === true ? (
+        <button
+          onClick={() => {
+            setAttendance(false);
+            setStudents(
+              classes.students.map((student) => {
+                return {
+                  ...student,
+                  isAttended: false,
+                };
+              })
+            );
+          }}
+        >
+          Sıfırla
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setAttendance(true);
+            setStudents(
+              students.map((student) => {
+                return {
+                  ...student,
+                  attendance:
+                    student.isAttended === true
+                      ? student.attendance
+                      : student.attendance + 1,
+                };
+              })
+            );
+          }}
+        >
+          Yoklama Tamamla
+        </button>
+      )}
     </div>
   );
 }
